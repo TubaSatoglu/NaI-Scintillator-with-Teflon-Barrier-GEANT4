@@ -1,4 +1,4 @@
-# Geant4 Detector Simulation
+# NaI Scintillator with Teflon-Barrier - GEANT4
 
 This repository contains Geant4-based simulations for particle interactions with different detector configurations.  
 Each project demonstrates geometry definition, physics list configuration, primary generator setup, and action initialization.  
