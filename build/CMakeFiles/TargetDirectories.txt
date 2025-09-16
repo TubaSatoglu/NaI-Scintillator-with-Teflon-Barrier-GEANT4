@@ -1,0 +1,4 @@
+/home/tuba/Documents/geant4_examples/Scintillator with Teflon Barriers (denemeler)/Scintillator with Teflon Barriers/build/CMakeFiles/sim.dir
+/home/tuba/Documents/geant4_examples/Scintillator with Teflon Barriers (denemeler)/Scintillator with Teflon Barriers/build/CMakeFiles/OpticalSim.dir
+/home/tuba/Documents/geant4_examples/Scintillator with Teflon Barriers (denemeler)/Scintillator with Teflon Barriers/build/CMakeFiles/edit_cache.dir
+/home/tuba/Documents/geant4_examples/Scintillator with Teflon Barriers (denemeler)/Scintillator with Teflon Barriers/build/CMakeFiles/rebuild_cache.dir
