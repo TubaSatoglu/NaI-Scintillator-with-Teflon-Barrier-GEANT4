@@ -6,28 +6,40 @@ In some cases, Pythia8 is also used to generate primary events for proton-proton
 
 ---
 
-## 1. Geometry Definition
-The detector geometry is implemented in **`detectorconstruction.cc`**.  
-- Defines volumes such as scintillators, barriers (Teflon/Aluminium), and surrounding materials.  
+## 1️⃣ Geometry Definition
+Implemented in **PMDetectorConstruction.cc/hh**.  
+- Builds the **scintillator detector volume** (plastic or NaI depending on the project).  
+- Surrounds it with **Teflon or Aluminium barriers** for optical reflection.  
+- Defines material properties and optical surfaces.  
 - Placement and visualization attributes are set to allow tracking of optical photons and primary particles.  
 
-## 2. Physics List
-The simulation uses the **FTFP_BERT_HP** physics list, which includes:  
-- Electromagnetic processes  
-- Hadronic interactions  
-- Optical photon processes (scintillation, absorption, reflection, boundary interactions)  
+---
 
-Additional physics lists can be substituted depending on the use case.  
+## 2️⃣ Physics List
+Defined in **PMPhysicsList.cc/hh**.  
+- Uses the **FTFP_BERT_HP** physics list, which includes:  
+  - Electromagnetic processes  
+  - Hadronic interactions  
+  - Optical photon processes (scintillation, absorption, boundary reflections)  
+- Additional physics lists can be substituted depending on the detector study.  
 
-## 3. Action Initialization
-User-defined actions are managed in **`ActionInitialization.cc`**.  
-- Handles run, event, stepping, and tracking actions.  
-- Ensures statistics on energy deposition, optical photon counts, and detector response.  
+---
 
-## 4. Primary Generator Action
-The initial conditions of particles are defined in **`PrimaryGeneratorAction.cc`**.  
-- For scintillator tests: alpha or gamma particles are generated at defined positions and energies.  
-- For proton-proton collisions: event data from Pythia8 (**`.hepmc3`**) can be read and injected into Geant4.  
+## 3️⃣ Action Initialization
+Defined in **PMActionInitialization.cc/hh**.  
+- Registers user-defined actions:  
+  - **PMRunAction** → Simulation-level setup and run summary  
+  - **PMEventAction** → Records energy deposition per event  
+  - **PMSteppingAction** → Tracks optical photons step-by-step  
+  - **PMSensitiveDetector** → Detects photon hits on sensitive surfaces  
+
+---
+
+## 4️⃣ Primary Generator Action
+Defined in **PMPrimaryGenerator.cc/hh**.  
+- Configures the particle gun.  
+- For scintillator tests: alpha or gamma particles are generated at defined positions and energies.
+- Allows selection of particle type, energy, and emission angle.  
 
 ---
 
@@ -40,7 +52,7 @@ The initial conditions of particles are defined in **`PrimaryGeneratorAction.cc`
 
 ---
 
-## Requirements
+## 🛠 Requirements
 - Geant4 (version 11.x recommended)  
 - CMake ≥ 3.10  
 - ROOT (optional, for result analysis)  
@@ -48,10 +60,10 @@ The initial conditions of particles are defined in **`PrimaryGeneratorAction.cc`
 
 ---
 
-## Build & Run
+## ▶️ Build Instructions
 
 ```bash
 mkdir build && cd build
 cmake ..
 make
-./exampleApp
+./sim run.mac
