@@ -6,7 +6,7 @@ In some cases, Pythia8 is also used to generate primary events for proton-proton
 
 ---
 
-## 1️⃣ Geometry Definition
+## Geometry Definition
 Implemented in **PMDetectorConstruction.cc/hh**.  
 - Builds the **scintillator detector volume** (plastic or NaI depending on the project).  
 - Surrounds it with **Teflon or Aluminium barriers** for optical reflection.  
@@ -15,7 +15,7 @@ Implemented in **PMDetectorConstruction.cc/hh**.
 
 ---
 
-## 2️⃣ Physics List
+## Physics List
 Defined in **PMPhysicsList.cc/hh**.  
 - Uses the **FTFP_BERT_HP** physics list, which includes:  
   - Electromagnetic processes  
@@ -25,7 +25,7 @@ Defined in **PMPhysicsList.cc/hh**.
 
 ---
 
-## 3️⃣ Action Initialization
+## Action Initialization
 Defined in **PMActionInitialization.cc/hh**.  
 - Registers user-defined actions:  
   - **PMRunAction** → Simulation-level setup and run summary  
@@ -35,7 +35,7 @@ Defined in **PMActionInitialization.cc/hh**.
 
 ---
 
-## 4️⃣ Primary Generator Action
+## Primary Generator Action
 Defined in **PMPrimaryGenerator.cc/hh**.  
 - Configures the particle gun.  
 - For scintillator tests: alpha or gamma particles are generated at defined positions and energies.
